@@ -11,4 +11,7 @@
 }
 .navbar {
   padding: 10px 200px 10px 200px;
+  a {
+    color: green;
+  }
 }
