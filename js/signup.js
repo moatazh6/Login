@@ -51,9 +51,9 @@ function addacount() {
       title: "Success!",
       text: "Account created successfully! Redirecting to login page...",
       showConfirmButton: false,
-      timer: 2000, // تأخير زمني قبل التوجيه
+      timer: 2000, 
     }).then(() => {
-      window.location.replace("index.html"); // تغيير الصفحة إلى صفحة تسجيل الدخول
+      window.location.replace("index.html"); 
     });
   }
 }

@@ -5,7 +5,7 @@ var btnSignIn = document.getElementById("btnSignIn");
 var accounts = JSON.parse(localStorage.getItem("accountList")) || [];
 
 btnSignIn.addEventListener("click", function (e) {
-  e.preventDefault(); // منع التحديث الافتراضي للصفحة
+  e.preventDefault();
 
   var isAccountFound = false;
 
@@ -16,16 +16,14 @@ btnSignIn.addEventListener("click", function (e) {
     ) {
       isAccountFound = true;
 
-      // تخزين بيانات المستخدم الحالي فقط
       localStorage.setItem("currentUser", JSON.stringify(accounts[i]));
 
-      // رسالة نجاح باستخدام SweetAlert
       Swal.fire({
         icon: "success",
         title: "Login Successful",
         text: `Welcome back, ${accounts[i].name}! Redirecting to home page...`,
         showConfirmButton: false,
-        timer: 2000, // تأخير زمني قبل التوجيه
+        timer: 2000,
       }).then(() => {
         window.location.replace("home.html");
       });
@@ -35,7 +33,6 @@ btnSignIn.addEventListener("click", function (e) {
   }
 
   if (!isAccountFound) {
-    // رسالة خطأ باستخدام SweetAlert
     Swal.fire({
       icon: "error",
       title: "Invalid Login",
