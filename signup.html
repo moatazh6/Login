@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/signup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 m-auto">
+          <div class="item text-center mt-5">
+            <h1>Smart Login System</h1>
+            <input
+              type="text"
+              name="name"
+              id="nameInputSignup"
+              class="form-control mt-2"
+              placeholder="Enter Your Name"
+              oninput=" validationInputs(this, 'msgName')"
+            />
+            <p class="alert alert-danger mt-3 d-none text-start" id="msgName">
+              Write from 5 to 15 letters
+            </p>
+            <input
+              type="email"
+              name="email"
+              id="emailInputSignup"
+              class="form-control mt-2"
+              placeholder="Enter Your Email"
+              oninput=" validationInputs(this, 'msgEmail')"
+            />
+            <p class="alert alert-danger mt-3 d-none text-start" id="msgEmail">
+              It must contain letters from 5 to 15 characters, and you can enter
+              numbers, and you must enter @, then enter (yahoo, gmail) and end
+              with .com
+            </p>
+            <input
+              type="password"
+              name="password"
+              id="passwordInputSignup"
+              class="form-control mt-2"
+              placeholder="Enter Your password"
+              oninput=" validationInputs(this, 'msgPassword')"
+            />
+            <p
+              class="alert alert-danger mt-3 d-none text-start"
+              id="msgPassword"
+            >
+              It must contain numbers, at least one capital letter, one small
+              letter, and one special letter
+            </p>
+            <button
+              type="submit"
+              onclick="addacount()"
+              class="btn btn-outline-primary mt-2 w-100"
+              id="signUpBtn"
+            >
+              Sign up
+            </button>
+            <div class="card-body">
+              <p class="card-text mb-2 mt-2">
+                Have an account already?<a href="index.html"> Sign In</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/signup.js"></script>
+  </body>
+</html>

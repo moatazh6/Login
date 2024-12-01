@@ -1,0 +1,22 @@
+.item h1 {
+  color: green;
+  margin-bottom: 30px;
+}
+
+.card-text {
+  color: green;
+
+  a {
+    text-decoration: none;
+  }
+}
+.card-body .card-text a:hover {
+  text-decoration: underline;
+}
+.container {
+  box-shadow: 0 0 60px 3px;
+  margin-top: 100px;
+}
+body {
+  background-color: black;
+}
