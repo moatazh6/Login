@@ -2,16 +2,20 @@ var btnLogOut = document.querySelector("#btnLogOut");
 var row = document.querySelector("#row");
 
 btnLogOut.addEventListener("click", function () {
-  localStorage.removeItem("loggedInUser");
+  localStorage.removeItem("currentUser");
   location.href = "index.html";
 });
 
-var currentAccount = JSON.parse(localStorage.getItem("accountList"));
+var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+if (currentUser) {
+  document.getElementById("row").innerText = `Welcome, ${currentUser.name}!`;
+} else {
+  window.location.replace("login.html");
+}
+
 function display() {
-  cartona = "";
-  for (var i = 0; i < currentAccount.length; i++) {
-    cartona += `  <h5 class="card-title">Welcome, ${currentAccount[i].name}</h5>`;
-  }
+  var cartona = `<h5 class="card-title">Welcome, ${currentUser.name}</h5>`;
   row.innerHTML = cartona;
 }
 

@@ -18,10 +18,18 @@ function addacount() {
   ) {
     for (var i = 0; i < accountList.length; i++) {
       if (accountList[i].email === emailInputSignup.value.trim()) {
-        alert("This email is already registered. Please try another email.");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "This email is already registered. Please try another email.",
+        });
         return;
       } else if (accountList[i].name === nameInputSignup.value.trim()) {
-        alert("This name is already registered. Please try another name.");
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "This name is already registered. Please try another name.",
+        });
         return;
       }
     }
@@ -38,7 +46,15 @@ function addacount() {
     emailInputSignup.classList.remove("is-valid");
     passwordInputSignup.classList.remove("is-valid");
     nameInputSignup.classList.remove("is-valid");
-    alert("Account created successfully!");
+    Swal.fire({
+      icon: "success",
+      title: "Success!",
+      text: "Account created successfully! Redirecting to login page...",
+      showConfirmButton: false,
+      timer: 2000, // تأخير زمني قبل التوجيه
+    }).then(() => {
+      window.location.replace("index.html"); // تغيير الصفحة إلى صفحة تسجيل الدخول
+    });
   }
 }
 function clearAccount() {
@@ -73,6 +89,3 @@ function validationInputs(element, msgId) {
     }
   }
 }
-signUpBtn.addEventListener("click", function () {
-  window.location.replace("index.html");
-});
