@@ -69,8 +69,7 @@ function validationInputs(element, msgId) {
   var regex = {
     nameInputSignup: /^[A-Za-z][a-zA-Z '.-]*[A-Za-z][^-]$/i,
     emailInputSignup: /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gm,
-    passwordInputSignup:
-      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
+    passwordInputSignup: /^[0-9]*[A-Za-z]*$/,
   };
 
   var msg = document.getElementById(msgId);
