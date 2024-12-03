@@ -51,9 +51,9 @@ function addacount() {
       title: "Success!",
       text: "Account created successfully! Redirecting to login page...",
       showConfirmButton: false,
-      timer: 2000, 
+      timer: 2000,
     }).then(() => {
-      window.location.replace("index.html"); 
+      window.location.replace("index.html");
     });
   }
 }
@@ -67,10 +67,10 @@ function validationInputs(element, msgId) {
   var text = element.value;
 
   var regex = {
-    nameInputSignup: /^[a-z]{5,15}$/i,
-    emailInputSignup: /^[A-Za-z]{4,10}[0-9]{0,5}@[a-z]{5,}\.com$/,
+    nameInputSignup: /^[A-Za-z][a-zA-Z '.-]*[A-Za-z][^-]$/i,
+    emailInputSignup: /^((?!\.)[\w\-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/gm,
     passwordInputSignup:
-      /^(?=.*[a-zA-Z])(?=.*[\d])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{9,}$/,
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/,
   };
 
   var msg = document.getElementById(msgId);
